@@ -8,10 +8,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const Header = () => {
     return (
-        <div>
+        <div className=''>
             <Navbar bg="light" expand="lg">
-                <Container fluid>
-                    <Navbar.Brand href="#">Chef Recipe</Navbar.Brand>
+                <Container >
+                    <Navbar.Brand className='fw-bold fw-1 ' href="#">Chef Recipe</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -19,8 +19,8 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="#action1">Home</Nav.Link>
-                            <Nav.Link href="#action2">Blog</Nav.Link>
+                            <Nav.Link href="/">Home</Nav.Link>
+                            <Nav.Link href="/blog">Blog</Nav.Link>
                             <Nav.Link href="#action2">Link</Nav.Link>
                         </Nav>
                         <Form className="d-flex">
