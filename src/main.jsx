@@ -12,10 +12,13 @@ import Home from './Component/Home/Home.jsx';
 import Blog from './Component/Blog/Blog.jsx';
 import Login from './Component/Page/Login/Login.jsx';
 import Register from './Component/Page/Register/Register.jsx';
+import ChefDetail from './Component/Page/ChefDetail/ChefDetail.jsx';
+import Error from './Component/Error/Error.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',
@@ -33,6 +36,12 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: ':id',
+        element: <ChefDetail></ChefDetail>,
+        loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+
       }
     ]
   },

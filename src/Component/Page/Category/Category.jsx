@@ -1,5 +1,7 @@
 import React from 'react';
 import './Category.css'
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Category = ({ chef }) => {
     const { id, name, image, experience, numOfRecipes, likes } = chef;
@@ -13,7 +15,9 @@ const Category = ({ chef }) => {
                     <p className='category-detail'>Likes: {likes}</p>
                     <p className='category-detail'>Recipes: {numOfRecipes}</p>
                 </div>
-                <button className='btn btn-danger mb-0 fw-semibold'>View Recipe</button>
+                <Link to={`/${id}`} className='text-white text-decoration-none '>
+                    <Button className='fw-semibold w-100' variant='danger'> View Recipe</Button>
+                </Link>
             </div>
         </div>
     );
