@@ -11,8 +11,9 @@ const Category = ({ chef }) => {
                     <h5 className="card-title">{name}</h5>
                     <p className='category-detail'>Experience: {experience}</p>
                     <p className='category-detail'>Likes: {likes}</p>
-                    <p className='category-detail'>Rating: {numOfRecipes}</p>
+                    <p className='category-detail'>Recipes: {numOfRecipes}</p>
                 </div>
+                <button className='btn btn-danger mb-0 fw-semibold'>View Recipe</button>
             </div>
         </div>
     );

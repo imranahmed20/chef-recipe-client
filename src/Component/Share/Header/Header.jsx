@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -21,7 +22,6 @@ const Header = () => {
                         >
                             <Nav.Link href="/">Home</Nav.Link>
                             <Nav.Link href="/blog">Blog</Nav.Link>
-                            <Nav.Link href="#action2">Link</Nav.Link>
                         </Nav>
                         <Form className="d-flex">
                             <Form.Control
@@ -30,7 +30,9 @@ const Header = () => {
                                 className="me-2"
                                 aria-label="Search"
                             />
-                            <Button variant="success">Login</Button>
+                            <Button variant="success">
+                                <Link className='text-white text-decoration-none fw-semibold' to='/login'>Login</Link>
+                            </Button>
                         </Form>
                     </Navbar.Collapse>
                 </Container>
