@@ -14,6 +14,8 @@ import Login from './Component/Page/Login/Login.jsx';
 import Register from './Component/Page/Register/Register.jsx';
 import ChefDetail from './Component/Page/ChefDetail/ChefDetail.jsx';
 import Error from './Component/Error/Error.jsx';
+import AuthProvider from './Component/Provider/AuthProvider.jsx';
+import PrivetRouter from './Router/PrivetRouter.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/category/:id',
-        element: <ChefDetail></ChefDetail>,
+        element: <PrivetRouter><ChefDetail></ChefDetail></PrivetRouter>,
         loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
 
       }
@@ -49,6 +51,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthProvider>
   </React.StrictMode>,
 )
