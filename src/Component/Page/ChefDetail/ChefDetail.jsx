@@ -26,29 +26,52 @@ const ChefDetail = () => {
                     <p className='fw-semibold mb-2'>Recipes: {numOfRecipes}</p>
                 </div>
                 <div className='col'>
-                    <img src={image} alt="" />
+                    <img className='rounded' src={image} alt="" />
                 </div>
 
             </div>
 
             <div className='row  row-cols-md-3 row-cols-sm-1 mt-5 '>
                 <div className='card col'>
-                    <h3 className='text-center'>{recipes[0]?.title}</h3>
-                    <img className='h-100 rounded' src={recipes[0]?.image} alt="" />
-                    <p className='fw-semibold m-2'>Choking Rating:
-                        {recipes[0]?.rating}</p>
+                    <h3 className='mt-3'> Recipe: {recipes[0]?.title}</h3>
+                    <h4>Ingredients: </h4>
+                    <ol>
+                        <li>{recipes[0]?.ingredients[0]}</li>
+                        <li>{recipes[0]?.ingredients[1]}</li>
+                        <li>{recipes[0]?.ingredients[2]}</li>
+                        <li>{recipes[0]?.ingredients[3]}</li>
+                        <li>{recipes[0]?.ingredients[4]}</li>
+                    </ol>
+                    <p className='fw-bold'>Cooking method: <span className='fw-semibold'>{recipes[0]?.instructions}</span></p>
+                    <h5 className='fw-semibold m-2 mb-3'>Choking Rating: {recipes[0]?.rating}</h5>
                     <Button onClick={handleFavorite} className='fw-semibold' variant='danger'>Favorite</Button>
                 </div>
                 <div className='card col'>
-                    <h3 className='text-center'>{recipes[1]?.title}</h3>
-                    <img className='h-100 rounded' src={recipes[1]?.image} alt="" />
-                    <p className='fw-semibold m-2'>Choking Rating: {recipes[1]?.rating}</p>
+                    <h3 className='mt-3'> Recipe: {recipes[1]?.title}</h3>
+                    <h4>Ingredients: </h4>
+                    <ol>
+                        <li>{recipes[1]?.ingredients[0]}</li>
+                        <li>{recipes[1]?.ingredients[1]}</li>
+                        <li>{recipes[1]?.ingredients[2]}</li>
+                        <li>{recipes[1]?.ingredients[3]}</li>
+                        <li>{recipes[1]?.ingredients[4]}</li>
+                    </ol>
+                    <p className='fw-bold'>Cooking method: <span className='fw-semibold'>{recipes[1]?.instructions}</span></p>
+                    <h5 className='fw-semibold m-2 mb-3'>Choking Rating: {recipes[1]?.rating}</h5>
                     <Button onClick={handleFavorite} className='fw-semibold' variant='danger'>Favorite</Button>
                 </div>
                 <div className='card col'>
-                    <h3 className='text-center'>{recipes[2]?.title}</h3>
-                    <img className='h-100 rounded' src={recipes[2]?.image} alt="" />
-                    <p className='fw-semibold m-2'>Choking Rating: {recipes[2]?.rating}</p>
+                    <h3 className='mt-3'> Recipe: {recipes[2]?.title}</h3>
+                    <h4>Ingredients: </h4>
+                    <ol>
+                        <li>{recipes[2]?.ingredients[0]}</li>
+                        <li>{recipes[2]?.ingredients[1]}</li>
+                        <li>{recipes[2]?.ingredients[2]}</li>
+                        <li>{recipes[2]?.ingredients[3]}</li>
+                        <li>{recipes[2]?.ingredients[4]}</li>
+                    </ol>
+                    <p className='fw-bold'>Cooking method: <span className='fw-semibold'>{recipes[2]?.instructions}</span></p>
+                    <h5 className='fw-semibold m-2 mb-3'>Choking Rating: {recipes[2]?.rating}</h5>
                     <Button onClick={handleFavorite} className='fw-semibold' variant='danger'>Favorite</Button>
                     <ToastContainer></ToastContainer>
                 </div>

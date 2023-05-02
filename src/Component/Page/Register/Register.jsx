@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -9,19 +9,25 @@ const Register = () => {
     const { createUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const location = useLocation()
+    const [error, setError] = useState('')
     const from = location.state?.from?.pathname || '/'
     const handleRegister = event => {
         event.preventDefault()
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
+        if (password.length < 6) {
+            setError("Password must be 6 character long")
+        }
         console.log(email, photo, password)
 
         createUser(email, password)
             .then(result => {
                 const logUser = result.user;
                 console.log(logUser)
+                form.reset()
                 navigate(from)
             })
             .catch(error => {
@@ -33,17 +39,21 @@ const Register = () => {
             <h3 className='text-center mb-3 fw-bold text-primary'>Create an account</h3>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Your Name</Form.Label>
+                    <Form.Control type="text" name='name' placeholder="Enter Name" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email" />
+                    <Form.Control type="email" name='email' placeholder="Enter email" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Photo URL</Form.Label>
-                    <Form.Control type="text" name='photo' placeholder="Photo URL" />
+                    <Form.Control type="text" name='photo' placeholder="Photo URL" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Password" />
+                    <Form.Control type="password" name='password' placeholder="Password" required />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
@@ -51,6 +61,7 @@ const Register = () => {
                 <Button className='fw-semibold' variant="success" type="submit">
                     Register
                 </Button>
+                <p className='text-danger'>{error}</p>
                 <p className='mt-3'>
                     Already have an account  <Link to='/login'>Login</Link>
                 </p>
