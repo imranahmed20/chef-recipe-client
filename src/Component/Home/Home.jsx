@@ -12,7 +12,7 @@ const Home = () => {
         <div className='container'>
             <Banner></Banner>
             <CardDetail></CardDetail>
-            <div className="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-3 g-4 mb-3">
                 {
                     categories.map(chef => <Category key={chef.id} chef={chef}></Category>)
                 }
