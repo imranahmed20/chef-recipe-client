@@ -31,8 +31,8 @@ const Header = () => {
                             <Nav.Link href="/blog" className='fw-semibold'>Blog</Nav.Link>
                         </Nav>
                         <Form className="d-flex">
-                            <p>{user?.email}</p>
-                            {/* <img src={} alt="" /> */}
+                            {user && <Nav.Link href="#action2">{user.displayName}</Nav.Link>}
+
                             {user ?
                                 <Button className='fw-semibold' onClick={handleLogOut} variant="success">logOut</Button> :
                                 <Button variant="success">
