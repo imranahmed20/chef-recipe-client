@@ -15,7 +15,7 @@ const Category = ({ chef }) => {
                     <p className='category-detail'>Likes: {likes}</p>
                     <p className='category-detail'>Recipes: {numOfRecipes}</p>
                 </div>
-                <Link to={`/${id}`} className='text-white text-decoration-none '>
+                <Link to={`/category/${id}`} className='text-white text-decoration-none '>
                     <Button className='fw-semibold w-100' variant='danger'> View Recipe</Button>
                 </Link>
             </div>

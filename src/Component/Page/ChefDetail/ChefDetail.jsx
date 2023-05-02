@@ -6,20 +6,22 @@ const ChefDetail = () => {
     const { id } = useParams()
     const details = useLoaderData()
     console.log(details)
-    const { name, image, experience, numOfRecipes, likes } = details
+    const { name, image, experience, numOfRecipes, likes, description } = details
     return (
         <div className='p-2 container mt-5'>
-            <Card>
-                <Card.Img variant="top" className='img-fluid w-50 mx-auto rounded' src={image} />
-                <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>
+            <div className='row row-cols-md-2'>
+                <div className='col mt-5'>
+                    <h1>{name}</h1>
+                    <p className='category-detail mt-3'>{description}</p>
+                    <p className='mt-3 fw-semibold mb-2'>Experience: {experience}</p>
+                    <p className='fw-semibold mb-2'>Likes: {likes}</p>
+                    <p className='fw-semibold mb-2'>Recipes: {numOfRecipes}</p>
+                </div>
+                <div className='col'>
+                    <img src={image} alt="" />
+                </div>
+            </div>
 
-                    </Card.Text>
-                    <Link> <Button variant="danger">Favorite</Button></Link>
-                    <Link to='/'> <Button variant="danger">Go to home</Button></Link>
-                </Card.Body>
-            </Card>
 
         </div>
     );
