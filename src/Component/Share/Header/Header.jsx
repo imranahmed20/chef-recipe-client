@@ -20,8 +20,8 @@ const Header = () => {
                             style={{ maxHeight: '100px' }}
                             navbarScroll
                         >
-                            <Nav.Link href="/">Home</Nav.Link>
-                            <Nav.Link href="/blog">Blog</Nav.Link>
+                            <Nav.Link href="/" className='fw-semibold'>Home</Nav.Link>
+                            <Nav.Link href="/blog" className='fw-semibold'>Blog</Nav.Link>
                         </Nav>
                         <Form className="d-flex">
                             <Form.Control
