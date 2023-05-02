@@ -2,11 +2,14 @@ import React, { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
     const handleRegister = event => {
         event.preventDefault()
         const form = event.target;
@@ -19,6 +22,7 @@ const Register = () => {
             .then(result => {
                 const logUser = result.user;
                 console.log(logUser)
+                navigate(from)
             })
             .catch(error => {
                 console.log(error)

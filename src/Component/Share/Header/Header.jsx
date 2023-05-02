@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -30,8 +31,13 @@ const Header = () => {
                             <Nav.Link href="/" className='fw-semibold'>Home</Nav.Link>
                             <Nav.Link href="/blog" className='fw-semibold'>Blog</Nav.Link>
                         </Nav>
-                        <Form className="d-flex">
-                            {user && <Nav.Link href="#action2">{user.displayName}</Nav.Link>}
+                        <Form className="d-flex align-items-center">
+                            {user ?
+                                // <p className='me-3 mt-1 text-center'>{user?.displayName}</p> 
+                                <img style={{ width: '50px' }} className='rounded-circle me-3' src={user?.photoURL} alt="" />
+                                :
+                                <Nav.Link href="#action2"><FaUserCircle className='me-3  mt-1' style={{ fontSize: '2rem' }}></FaUserCircle></Nav.Link>
+                            }
 
                             {user ?
                                 <Button className='fw-semibold' onClick={handleLogOut} variant="success">logOut</Button> :

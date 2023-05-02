@@ -4,8 +4,10 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../../firebase/Firebase';
+import { FaGoogle, FaGithub } from 'react-icons/fa';
+
 
 const auth = getAuth(app)
 const Login = () => {
@@ -14,6 +16,7 @@ const Login = () => {
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
     const provider = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
 
 
     const handleLogin = event => {
@@ -46,9 +49,17 @@ const Login = () => {
                 console.log(error.message)
             })
     }
+    const handleGithubLogin = () => {
+        signInWithPopup(auth, githubProvider)
+            .then(result => {
+                const user = result.user;
+                navigate(from)
+            })
+            .catch(error => console.log(error.message))
+    }
 
     return (
-        <Container className='w-50 mx-auto mt-5'>
+        <Container className='w-50 mx-auto mt-5 mb-3'>
             <h3 className='text-center mb-3 fw-bold'>Please Login</h3>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -70,7 +81,11 @@ const Login = () => {
                     Don't have an account <Link to='/register'>Register</Link>
                 </p>
             </Form>
-            <button className='btn btn-danger' onClick={handleGoogleLogin}>Google Provider</button>
+            <p className='fw-semibold text-center'>--------- Or Login With ----------</p>
+            <button className='btn btn-danger fw-semibold  w-100' onClick={handleGoogleLogin}><FaGoogle></FaGoogle> Google Login</button>
+            <br />
+            <br />
+            <button className='btn btn-danger fw-semibold  w-100' onClick={handleGithubLogin}><FaGithub></FaGithub> Github Login</button>
         </Container>
     );
 };

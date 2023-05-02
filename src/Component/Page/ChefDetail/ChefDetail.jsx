@@ -34,20 +34,20 @@ const ChefDetail = () => {
             <div className='row  row-cols-md-3 row-cols-sm-1 mt-5 '>
                 <div className='card col'>
                     <h3 className='text-center'>{recipes[0]?.title}</h3>
-                    <img className='h-75 rounded' src={recipes[0]?.image} alt="" />
+                    <img className='h-100 rounded' src={recipes[0]?.image} alt="" />
                     <p className='fw-semibold m-2'>Choking Rating:
                         {recipes[0]?.rating}</p>
                     <Button onClick={handleFavorite} className='fw-semibold' variant='danger'>Favorite</Button>
                 </div>
                 <div className='card col'>
                     <h3 className='text-center'>{recipes[1]?.title}</h3>
-                    <img className='h-75 rounded' src={recipes[1]?.image} alt="" />
+                    <img className='h-100 rounded' src={recipes[1]?.image} alt="" />
                     <p className='fw-semibold m-2'>Choking Rating: {recipes[1]?.rating}</p>
                     <Button onClick={handleFavorite} className='fw-semibold' variant='danger'>Favorite</Button>
                 </div>
                 <div className='card col'>
                     <h3 className='text-center'>{recipes[2]?.title}</h3>
-                    <img className='h-75 rounded' src={recipes[2]?.image} alt="" />
+                    <img className='h-100 rounded' src={recipes[2]?.image} alt="" />
                     <p className='fw-semibold m-2'>Choking Rating: {recipes[2]?.rating}</p>
                     <Button onClick={handleFavorite} className='fw-semibold' variant='danger'>Favorite</Button>
                     <ToastContainer></ToastContainer>
