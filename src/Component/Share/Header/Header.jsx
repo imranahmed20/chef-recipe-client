@@ -34,7 +34,9 @@ const Header = () => {
                         <Form className="d-flex align-items-center">
 
                             {user ?
-                                <img style={{ width: '50px' }} className='rounded-circle me-3' src={user?.photoURL} alt="" />
+                                <button type="button" className="btn " data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={user?.email}>
+                                    <img style={{ width: '50px' }} className='rounded-circle me-3' src={user?.photoURL} alt="" />
+                                </button>
                                 :
                                 <Nav.Link href="#action2"><FaUserCircle className='me-3  mt-1' style={{ fontSize: '2rem' }}></FaUserCircle></Nav.Link>
                             }

@@ -6,8 +6,6 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { updateProfile, getAuth } from 'firebase/auth';
 import app from '../../../firebase/Firebase';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const auth = getAuth(app)
 const Register = () => {
@@ -26,19 +24,27 @@ const Register = () => {
         if (password.length < 6) {
             setError("Password must be 6 character long")
         }
+
         console.log(name, email, photo, password)
         createUser(email, password)
+
             .then(result => {
                 updateProfile(result.user, { displayName: name, photoURL: photo })
                 const user = result.user;
+
                 console.log(user)
                 form.reset()
                 navigate('/login')
             })
             .catch(error => {
                 console.log(error)
+                setError(error.message)
+
+
             })
-        toast('Register successfully. Now please Login')
+
+
+
     }
     return (
         <Container className='w-50 mx-auto mt-5'>
@@ -72,7 +78,6 @@ const Register = () => {
                     Already have an account  <Link to='/login'>Login</Link>
                 </p>
             </Form>
-            <ToastContainer></ToastContainer>
         </Container>
     );
 };
