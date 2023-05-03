@@ -4,6 +4,7 @@ import Rating from 'react-rating';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './chefDetail.css'
 
 const ChefDetail = () => {
     const { id } = useParams()
@@ -21,7 +22,7 @@ const ChefDetail = () => {
             <div className='row row-cols-md-2'>
                 <div className='col mt-5'>
                     <h1>{name}</h1>
-                    <p className='category-detail mt-3'>{description}</p>
+                    <p className='chef-details mt-3'>{description}</p>
                     <p className='mt-3 fw-semibold mb-2'>Experience: {experience}</p>
                     <p className='fw-semibold mb-2'>Likes: {likes}</p>
                     <p className='fw-semibold mb-2'>Recipes: {numOfRecipes}</p>
