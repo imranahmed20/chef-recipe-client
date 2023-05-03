@@ -32,8 +32,8 @@ const Header = () => {
                             <Nav.Link href="/blog" className='fw-semibold'>Blog</Nav.Link>
                         </Nav>
                         <Form className="d-flex align-items-center">
+
                             {user ?
-                                // <p className='me-3 mt-1 text-center'>{user?.displayName}</p> 
                                 <img style={{ width: '50px' }} className='rounded-circle me-3' src={user?.photoURL} alt="" />
                                 :
                                 <Nav.Link href="#action2"><FaUserCircle className='me-3  mt-1' style={{ fontSize: '2rem' }}></FaUserCircle></Nav.Link>

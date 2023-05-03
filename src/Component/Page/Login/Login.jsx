@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -12,6 +12,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 const auth = getAuth(app)
 const Login = () => {
     const { signIn } = useContext(AuthContext)
+    const [error, setError] = useState('')
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
@@ -28,13 +29,14 @@ const Login = () => {
 
         signIn(email, password)
             .then(result => {
-                const logUser = result.user;
-                console.log(logUser)
+                const user = result.user;
+                console.log(user)
                 form.reset()
                 navigate(from)
             })
             .catch(error => {
                 console.log(error.message)
+                setError(error.message)
             })
 
     }
@@ -78,6 +80,7 @@ const Login = () => {
                 <Button className='fw-semibold' variant="success" type="submit">
                     Login
                 </Button>
+                <p className='text-danger mt-3'>{error}</p>
                 <p className='mt-3'>
                     Don't have an account <Link to='/register'>Register</Link>
                 </p>
