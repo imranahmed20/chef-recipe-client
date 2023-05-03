@@ -8,10 +8,11 @@ import 'react-toastify/dist/ReactToastify.css';
 const ChefDetail = () => {
     const { id } = useParams()
     const details = useLoaderData()
-    console.log(details)
+    // const isAnonymous = true;
     const { name, image, experience, numOfRecipes, likes, description, recipes } = details
 
-    const handleFavorite = () => {
+    const handleFavorite = (event) => {
+        event.currentTarget.disabled = true;
         toast('My Favorite food')
 
     }
