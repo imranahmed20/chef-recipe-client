@@ -9,7 +9,6 @@ import OtherSection from '../Page/OtherSection/OtherSection';
 
 const Home = () => {
     const categories = useLoaderData()
-    console.log(categories)
     return (
         <div className='container'>
             <Banner></Banner>

@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/categories')
+        loader: () => fetch('https://chef-recipe-server-imranahmed20.vercel.app/categories')
       },
       {
         path: '/blog',
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: '/category/:id',
         element: <PrivetRouter><ChefDetail></ChefDetail></PrivetRouter>,
-        loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`)
+        loader: ({ params }) => fetch(`https://chef-recipe-server-imranahmed20.vercel.app/categories/${params.id}`)
 
       }
     ]

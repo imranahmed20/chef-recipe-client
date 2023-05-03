@@ -18,7 +18,7 @@ const Footer = () => {
                 <div className="col text-center">
                     <h3 className='fw-bold mb-4'>Chef Recipe</h3>
                     <p className='footer-detail'>Open the Recipe “ktexperts-recipe. rb” and write script to create file. Verify syntax of recipe. Execute the recipe Locally/Call chef-client.</p>
-                    <div className='mb-3'>
+                    <div className='mb-4'>
                         <FaFacebook className='me-3' style={{ fontSize: '2rem' }}></FaFacebook>
                         <FaGoogle className='me-3' style={{ fontSize: '2rem' }}></FaGoogle>
                         <FaTwitter style={{ fontSize: '2rem' }}></FaTwitter>

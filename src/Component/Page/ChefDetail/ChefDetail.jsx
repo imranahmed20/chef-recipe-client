@@ -5,6 +5,8 @@ import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './chefDetail.css'
+import { FaStar, FaStarHalf, FaStarHalfAlt } from 'react-icons/fa';
+
 
 const ChefDetail = () => {
     const { id } = useParams()
@@ -38,42 +40,42 @@ const ChefDetail = () => {
                     <h3 className='mt-3'> Recipe: {recipes[0]?.title}</h3>
                     <h4>Ingredients: </h4>
                     <ol>
-                        <li>{recipes[0]?.ingredients[0]}</li>
-                        <li>{recipes[0]?.ingredients[1]}</li>
-                        <li>{recipes[0]?.ingredients[2]}</li>
-                        <li>{recipes[0]?.ingredients[3]}</li>
-                        <li>{recipes[0]?.ingredients[4]}</li>
+                        <li className='fw-semibold'>{recipes[0]?.ingredients[0]}</li>
+                        <li className='fw-semibold'>{recipes[0]?.ingredients[1]}</li>
+                        <li className='fw-semibold'>{recipes[0]?.ingredients[2]}</li>
+                        <li className='fw-semibold'>{recipes[0]?.ingredients[3]}</li>
+                        <li className='fw-semibold'> {recipes[0]?.ingredients[4]}</li>
                     </ol>
-                    <p className='fw-bold'>Cooking method: <span className='fw-semibold'>{recipes[0]?.instructions}</span></p>
-                    <h5 className='fw-semibold m-2 mb-3'>Choking Rating: {recipes[0]?.rating}</h5>
+                    <p className='fw-bold'>Cooking method:<span className='fw-semibold'>{recipes[0]?.instructions}</span></p>
+                    <h5 className='fw-semibold m-2 mb-3'>Choking Rating: <FaStar className='text-warning'></FaStar ><FaStar className='text-warning'></FaStar > <FaStar className='text-warning'></FaStar> <FaStar className='text-warning'></FaStar><FaStarHalfAlt className='text-warning'></FaStarHalfAlt>   {recipes[0]?.rating}</h5>
                     <Button onClick={handleFavorite} className='fw-semibold' variant='danger'>Favorite</Button>
                 </div>
                 <div className='card col'>
                     <h3 className='mt-3'> Recipe: {recipes[1]?.title}</h3>
                     <h4>Ingredients: </h4>
                     <ol>
-                        <li>{recipes[1]?.ingredients[0]}</li>
-                        <li>{recipes[1]?.ingredients[1]}</li>
-                        <li>{recipes[1]?.ingredients[2]}</li>
-                        <li>{recipes[1]?.ingredients[3]}</li>
-                        <li>{recipes[1]?.ingredients[4]}</li>
+                        <li className='fw-semibold'>{recipes[1]?.ingredients[0]}</li>
+                        <li className='fw-semibold'>{recipes[1]?.ingredients[1]}</li>
+                        <li className='fw-semibold'>{recipes[1]?.ingredients[2]}</li>
+                        <li className='fw-semibold'>{recipes[1]?.ingredients[3]}</li>
+                        <li className='fw-semibold'>{recipes[1]?.ingredients[4]}</li>
                     </ol>
                     <p className='fw-bold'>Cooking method: <span className='fw-semibold'>{recipes[1]?.instructions}</span></p>
-                    <h5 className='fw-semibold m-2 mb-3'>Choking Rating: {recipes[1]?.rating}</h5>
+                    <h5 className='fw-semibold m-2 mb-3'>Choking Rating:<FaStar className='text-warning'></FaStar ><FaStar className='text-warning'></FaStar > <FaStar className='text-warning'></FaStar> <FaStar className='text-warning'></FaStar><FaStarHalfAlt className='text-warning'></FaStarHalfAlt> {recipes[1]?.rating}</h5>
                     <Button onClick={handleFavorite} className='fw-semibold' variant='danger'>Favorite</Button>
                 </div>
                 <div className='card col'>
                     <h3 className='mt-3'> Recipe: {recipes[2]?.title}</h3>
                     <h4>Ingredients: </h4>
                     <ol>
-                        <li>{recipes[2]?.ingredients[0]}</li>
-                        <li>{recipes[2]?.ingredients[1]}</li>
-                        <li>{recipes[2]?.ingredients[2]}</li>
-                        <li>{recipes[2]?.ingredients[3]}</li>
-                        <li>{recipes[2]?.ingredients[4]}</li>
+                        <li className='fw-semibold'>{recipes[2]?.ingredients[0]}</li>
+                        <li className='fw-semibold'>{recipes[2]?.ingredients[1]}</li>
+                        <li className='fw-semibold'>{recipes[2]?.ingredients[2]}</li>
+                        <li className='fw-semibold'>{recipes[2]?.ingredients[3]}</li>
+                        <li className='fw-semibold'>{recipes[2]?.ingredients[4]}</li>
                     </ol>
                     <p className='fw-bold'>Cooking method: <span className='fw-semibold'>{recipes[2]?.instructions}</span></p>
-                    <h5 className='fw-semibold m-2 mb-3'>Choking Rating: {recipes[2]?.rating}</h5>
+                    <h5 className='fw-semibold m-2 mb-3'>Choking Rating:<FaStar className='text-warning'></FaStar ><FaStar className='text-warning'></FaStar > <FaStar className='text-warning'></FaStar> <FaStar className='text-warning'></FaStar><FaStarHalfAlt className='text-warning'></FaStarHalfAlt> {recipes[2]?.rating}</h5>
                     <Button onClick={handleFavorite} className='fw-semibold' variant='danger'>Favorite</Button>
                     <ToastContainer></ToastContainer>
                 </div>
