@@ -4,7 +4,7 @@ import { FaGoogle, FaTwitter, FaFacebook } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <div className='bg-dark text-white p-5 mb-0'>
+        <div className='bg-dark text-white p-5 mb-0 mt-3'>
             <div className='row row-cols-1 row-cols-md-3'>
                 <div className="col text-center">
                     <h3 className='fw-bold'>Opening Times</h3>

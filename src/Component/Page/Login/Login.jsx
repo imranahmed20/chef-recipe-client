@@ -62,7 +62,7 @@ const Login = () => {
     }
 
     return (
-        <Container className='w-50 mx-auto mt-5 mb-3'>
+        <Container className='card p-5 w-50 mx-auto mt-5 mb-3'>
             <h3 className='text-center mb-3 fw-bold'>Please Login</h3>
             <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -85,9 +85,10 @@ const Login = () => {
                     Don't have an account <Link to='/register'>Register</Link>
                 </p>
             </Form>
-            <p className='fw-semibold text-center'>--------- Or Login With ----------</p>
+            <p className='fw-semibold text-center'>----- Or Login With ------</p>
             <button className='btn btn-danger fw-semibold  w-100' onClick={handleGoogleLogin}><FaGoogle></FaGoogle> Google Login</button>
             <br />
+            <p className='text-center fw-semibold'>--- Or ---</p>
             <br />
             <button className='btn btn-danger fw-semibold  w-100' onClick={handleGithubLogin}><FaGithub></FaGithub> Github Login</button>
         </Container>

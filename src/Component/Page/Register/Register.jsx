@@ -47,8 +47,8 @@ const Register = () => {
 
     }
     return (
-        <Container className='w-50 mx-auto mt-5'>
-            <h3 className='text-center mb-3 fw-bold text-primary'>Create an account</h3>
+        <Container className='card w-50 mx-auto mt-5 p-4'>
+            <h3 className='text-center mb-4 fw-bold text-primary'>Create an account</h3>
             <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
