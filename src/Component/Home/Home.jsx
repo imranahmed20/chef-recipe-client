@@ -4,6 +4,7 @@ import CardDetail from '../Page/CardDetail/CardDetail';
 import { useLoaderData } from 'react-router-dom';
 import Category from '../Page/Category/Category';
 import Food from '../Page/Food/Food';
+import OtherSection from '../Page/OtherSection/OtherSection';
 
 
 const Home = () => {
@@ -18,12 +19,8 @@ const Home = () => {
                     categories.map(chef => <Category key={chef.id} chef={chef}></Category>)
                 }
             </div>
-
-            <div className="row row-cols-md-3 row-cols-sm-1 g-4 mb-3">
-                {
-                    categories.map(food => <Food key={food.id} food={food}></Food>)
-                }
-            </div>
+            <OtherSection></OtherSection>
+            <Food></Food>
         </div>
     );
 };

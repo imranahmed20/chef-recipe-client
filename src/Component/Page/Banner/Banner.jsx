@@ -14,7 +14,6 @@ const Banner = () => {
             <div className='col'>
                 <img className='rounded mt-2' src={image} alt="" />
             </div>
-
         </div>
     );
 };
