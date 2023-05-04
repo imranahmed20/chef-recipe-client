@@ -9,16 +9,16 @@ const Food = () => {
         <div className='chef-section'>
             <h1 className='text-center fw-bold mb-5'>Our Food Galary</h1>
             <div className='row row-cols-md-3 row-cols-sm-1 g-4 mb-3'>
-                <div className='card col'>
+                <div className='card col-12 col-md-4'>
                     <img className='h-100 rounded' src={image1} alt="" />
                     <h4 className='text-center'>Chocolate Cake</h4>
 
                 </div>
-                <div className='card col'>
+                <div className='card col-12 col-md-4'>
                     <img className='h-100 rounded' src={image2} alt="" />
                     <h4 className='text-center'>Barger</h4>
                 </div>
-                <div className='card col'>
+                <div className='card col-12 col-md-4'>
                     <img className='h-100 rounded' src={image3} alt="" />
                     <h4 className='text-center'>Pesto Pasta</h4>
                 </div>
