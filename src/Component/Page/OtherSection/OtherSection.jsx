@@ -16,7 +16,7 @@ const OtherSection = () => {
                     </div>
                     <button className='btn btn-danger fw-semibold mt-2 mb-3'>View More</button>
                 </div>
-                <div className='col-12 col-md-6'>
+                <div className='col-12 col-md-6 mt-2'>
                     <img className='rounded img-fluid w-100  me-3' src={image} alt="" />
                 </div>
             </div>
