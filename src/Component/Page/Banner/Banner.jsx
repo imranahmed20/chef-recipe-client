@@ -12,7 +12,7 @@ const Banner = () => {
                 <button className='btn btn-danger fw-semibold'>Read More</button>
             </div>
             <div className='col-12 col-md-6 w-md-100'>
-                <img className='rounded mt-2 img-fluid' src={image} alt="" />
+                <img className='rounded mt-2 img-fluid w-100' src={image} alt="" />
             </div>
         </div>
     );

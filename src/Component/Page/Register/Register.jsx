@@ -31,7 +31,6 @@ const Register = () => {
             .then(result => {
                 updateProfile(result.user, { displayName: name, photoURL: photo })
                 const user = result.user;
-
                 console.log(user)
                 form.reset()
                 navigate('/login')

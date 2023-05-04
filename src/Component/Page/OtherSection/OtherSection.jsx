@@ -14,10 +14,10 @@ const OtherSection = () => {
                         <img className='rounded-circle' src={image2} alt="" />
                         <p className='ms-3 mt-3 fw-semibold'>Recipe by Jim Doe</p>
                     </div>
-                    <button className='btn btn-danger fw-semibold mt-2'>View More</button>
+                    <button className='btn btn-danger fw-semibold mt-2 mb-2'>View More</button>
                 </div>
                 <div className='col-12 col-md-6'>
-                    <img className='rounded img-fluid  me-3' src={image} alt="" />
+                    <img className='rounded img-fluid w-100  me-3' src={image} alt="" />
                 </div>
             </div>
         </div>
