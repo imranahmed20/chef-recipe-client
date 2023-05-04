@@ -1,28 +1,14 @@
-import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf';
-
+import React from 'react';
 
 const Blog = () => {
-    // const [numPages, setNumPages] = useState(null);
-    // const [pageNumber, setPageNumber] = useState(1);
-    // function onDocumentLoadSuccess({ numPages }) {
-    //     setNumPages(numPages);
-    // }
     return (
         <div className='container mb-5'>
             <h1 className='text-center mb-5 mt-3 text-danger'>Question Part</h1>
+          
             <div className='card mb-5 p-4'>
                 <h3>1. Tell us the differences between uncontrolled and controlled components.</h3>
                 <p className='category-detail'>In React, controlled components refer to components that have their state and behavior controlled by the parent component. These components rely on props passed down from the parent component to update their state and behavior. Uncontrolled components refer to components that manage their own state internally.</p>
             </div>
-            {/* <div>
-                <Document file="somefile.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-                    <Page pageNumber={pageNumber} />
-                </Document>
-                <p>
-                    Page {pageNumber} of {numPages}
-                </p>
-            </div> */}
 
             <div className='card mb-5 p-4'>
                 <h3>2. How to validate React props using PropTypes?</h3>

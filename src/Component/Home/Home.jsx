@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Banner from '../Page/Banner/Banner';
 import CardDetail from '../Page/CardDetail/CardDetail';
 import { useLoaderData } from 'react-router-dom';
 import Category from '../Page/Category/Category';
 import Food from '../Page/Food/Food';
 import OtherSection from '../Page/OtherSection/OtherSection';
+import { AuthContext } from '../Provider/AuthProvider';
+import { Spinner } from 'react-bootstrap';
 
 
 const Home = () => {
